@@ -9,13 +9,13 @@
   "author": "Rudolph-Miller",
   "license": "MIT",
   "dependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-sortable-table": "file:.."
   },
   "devDependencies": {
-    "babel-core": "^6.7.2",
-    "babel-loader": "^6.2.4",
-    "webpack": "^1.12.14"
+    "babel-core": "^6.25.0",
+    "babel-loader": "^6.2.5",
+    "webpack": "^1.15.0",
   }
 }
