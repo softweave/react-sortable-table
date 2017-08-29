@@ -1,6 +1,7 @@
-import { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class SortableTableRow extends Component {
+class SortableTableRow extends React.Component {
   render() {
     var tds = this.props.columns.map(function (item, index) {
       var value = this.props.data[item.key];
@@ -25,13 +26,7 @@ class SortableTableRow extends Component {
   }
 }
 
-export default class SortableTableBody extends Component {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-    columns: PropTypes.array.isRequired,
-    sortings: PropTypes.array.isRequired
-  }
-
+export default class SortableTableBody extends React.Component {
   render() {
     var bodies = this.props.data.map(((item, index) => {
       return (
@@ -49,3 +44,9 @@ export default class SortableTableBody extends Component {
     );
   }
 }
+
+SortableTableBody.propTypes = {
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.array.isRequired,
+  sortings: PropTypes.array.isRequired
+};

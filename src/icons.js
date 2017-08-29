@@ -1,10 +1,7 @@
-import { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class FaIcon extends Component {
-  static propTypes = {
-    icon: PropTypes.string.isRequired
-  }
-
+class FaIcon extends React.Component {
   render() {
     const className = `fa fa-lg ${this.props.icon}`
     return (
@@ -16,7 +13,11 @@ class FaIcon extends Component {
   }
 }
 
-export class SortIconBoth extends Component {
+FaIcon.propTypes = {
+  icon: PropTypes.string.isRequired
+};
+
+export class SortIconBoth extends React.Component {
   render() {
     return (
       <FaIcon icon="fa-sort" style={this.props.style} />
@@ -24,7 +25,7 @@ export class SortIconBoth extends Component {
   }
 }
 
-export class SortIconAsc extends Component {
+export class SortIconAsc extends React.Component {
   render() {
     return (
       <FaIcon icon="fa-sort-asc" style={this.props.style} />
@@ -32,7 +33,7 @@ export class SortIconAsc extends Component {
   }
 }
 
-export class SortIconDesc extends Component {
+export class SortIconDesc extends React.Component {
   render() {
     return (
       <FaIcon icon="fa-sort-desc" style={this.props.style} />

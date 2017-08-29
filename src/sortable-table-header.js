@@ -1,23 +1,9 @@
-import { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { SortIconBoth, SortIconDesc, SortIconAsc } from './icons';
 
-class SortableTableHeaderItem extends Component {
-  static propTypes = {
-    headerProps: PropTypes.object,
-    sortable: PropTypes.bool,
-    sorting: PropTypes.oneOf(['desc', 'asc', 'both']),
-    iconStyle: PropTypes.object,
-    iconDesc: PropTypes.node,
-    iconAsc: PropTypes.node,
-    iconBoth: PropTypes.node
-  }
-
-  static defaultProps = {
-    headerProps: {},
-    sortable: true
-  }
-
+class SortableTableHeaderItem extends React.Component {
   onClick(e) {
     if (this.props.sortable)
       this.props.onClick(this.props.index);
@@ -58,17 +44,22 @@ class SortableTableHeaderItem extends Component {
   }
 }
 
-export default class SortableTableHeader extends Component {
-  static propTypes = {
-    columns: PropTypes.array.isRequired,
-    sortings: PropTypes.array.isRequired,
-    onStateChange: PropTypes.func,
-    iconStyle: PropTypes.object,
-    iconDesc: PropTypes.node,
-    iconAsc: PropTypes.node,
-    iconBoth: PropTypes.node
-  }
+SortableTableHeaderItem.propTypes = {
+  headerProps: PropTypes.object,
+  sortable: PropTypes.bool,
+  sorting: PropTypes.oneOf(['desc', 'asc', 'both']),
+  iconStyle: PropTypes.object,
+  iconDesc: PropTypes.node,
+  iconAsc: PropTypes.node,
+  iconBoth: PropTypes.node
+}
 
+SortableTableHeaderItem.defaultProps = {
+  headerProps: {},
+  sortable: true
+}
+
+export default class SortableTableHeader extends React.Component {
   onClick(index) {
     this.props.onStateChange.bind(this)(index);
   }
@@ -101,4 +92,14 @@ export default class SortableTableHeader extends Component {
       </thead>
     );
   }
+}
+
+SortableTableHeader.propTypes = {
+  columns: PropTypes.array.isRequired,
+  sortings: PropTypes.array.isRequired,
+  onStateChange: PropTypes.func,
+  iconStyle: PropTypes.object,
+  iconDesc: PropTypes.node,
+  iconAsc: PropTypes.node,
+  iconBoth: PropTypes.node
 }

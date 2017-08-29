@@ -1,17 +1,9 @@
-import { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import SortableTableHeader from './sortable-table-header';
 import SortableTableBody from './sortable-table-body';
 
-export default class SortableTable extends Component {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-    columns: PropTypes.array.isRequired,
-    style: PropTypes.object,
-    iconStyle: PropTypes.object,
-    iconDesc: PropTypes.node,
-    iconAsc: PropTypes.node,
-    iconBoth: PropTypes.node
-  }
+export default class SortableTable extends React.Component {
 
   constructor(props) {
     super(props)
@@ -161,3 +153,14 @@ export default class SortableTable extends Component {
     );
   }
 }
+
+SortableTable.propTypes = {
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.array.isRequired,
+  style: PropTypes.object,
+  iconStyle: PropTypes.object,
+  iconDesc: PropTypes.node,
+  iconAsc: PropTypes.node,
+  iconBoth: PropTypes.node
+};
+

@@ -1,6 +1,4 @@
-window.React = require('react');
-import { render } from 'react-dom';
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import SortableTable from 'react-sortable-table';
 
 function getFamilyName(name) {
@@ -35,7 +33,7 @@ const FamilyNameSorter = {
 };
 
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super()
     this.state = {
